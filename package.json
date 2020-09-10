@@ -4,9 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "build": "ng build --prod"
-    "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -62,7 +60,7 @@
     "typescript": "~3.9.7"
   },
   "engines": {
-    "node":"v12.14.1", //check node and npm version
+    "node":"v12.14.1",
     "npm":"6.13.4"
     }
    

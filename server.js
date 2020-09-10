@@ -1,11 +1,9 @@
 const exp=require("express")
 const app=exp()
-port=4000
-app.listen(process.env.PORT || port,()=>{console.log("app is running on port no 4000......")})
+app.listen(process.env.PORT || 4000,()=>{console.log("app is running on port no 4000......")})
 
 
-app.use(exp.json())
-
+app.use(exp.json());
 
 const adminApp=require("./src/APiS/admin")
 
