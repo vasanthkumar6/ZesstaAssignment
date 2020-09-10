@@ -1,0 +1,229 @@
+<!-- <div class="form-group mt-3 text-right">
+    <form #up="ngForm" (ngSubmit)="uploadExcel(up.value)">
+        <input type="file" name="uploadfile" (change)="fileUpload($event)" ngModel>
+        <button class="btn btn-success" type="submit">Upload Excel</button>
+    </form>
+</div> -->
+<div class="container-fluid"  style="margin-top: 60px; ">
+<form #ref="ngForm"          (ngSubmit)="applyjob(ref.value);ref.reset()">
+    
+    <!-- <div class="alert alert-success alert-dismissible" *ngIf="ref.valid">   
+        <button type="button" class="close" *ngIf="ref.invalid"  data-dismiss="alert">&times;</button>
+        <strong>Success!</strong>Yo have missed an Required Field,
+        You can't Submit Application untill filling the requird fields.
+      </div> -->
+
+<mat-vertical-stepper linear >
+       
+    
+     <mat-step label="Personal details" completed=true>
+            
+            <div class="form-group">
+                 <p>Personal details</p>
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input matInput type="text" required name="name" #ref1="ngModel" ngModel> 
+                </mat-form-field>
+                <div *ngIf="ref1.touched && ref1.invalid" class="alert alert-danger w-50" >This Field Is Required</div>
+
+
+            </div> 
+            <div class="form-group">
+                <mat-form-field>
+                    <mat-label>Adress</mat-label>
+                    <input matInput type="text" required name="address" #ref2="ngModel" ngModel> 
+                </mat-form-field>
+                <div *ngIf="ref2.invalid &&( ref2.touched||ref2.dirty)" class="alert alert-danger">
+                    <div *ngIf="ref2.errors?.required">This Field Is Required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <mat-form-field>
+                 <mat-label>Phonenumber</mat-label>
+                 <input matInput type="text" required name="phonenumber" #ref3="ngModel" minlength="10" maxlength="10" ngModel> 
+             </mat-form-field>
+             <div *ngIf="ref3.invalid &&( ref3.touched||ref3.dirty)" class="alert alert-danger">
+                <div *ngIf="ref3.errors?.required">This Field Is Required</div>
+                <div *ngIf="ref3.errors?.minlength">Invalid PhoneNumber</div>
+                <div *ngIf="ref3.errors?.maxlength">Invalid PhoneNumber</div>
+            </div>
+             
+         </div>
+           
+         <div class="form-group">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="text" required name="email" #ref4="ngModel" ngModel> 
+            </mat-form-field>
+            <div *ngIf="ref4.touched && ref4.invalid" class="alert alert-danger w-50" >This Field Is Required</div>
+
+        </div>
+           
+           <!-- <div class="form-group">
+                <mat-form-field>
+                    <mat-label>Last Name</mat-label>
+                    <input matInput type="text" required name="userName" ngModel> 
+                </mat-form-field>
+            </div> -->
+          
+      
+            
+     
+      <div class="text-right">
+        <button mat-raised-button color="primary" type="button"  class="mr-3">Back</button>
+        <button mat-raised-button color="primary"  matStepperNext type="button"  > Next</button>
+      </div>
+    </mat-step>
+     <mat-step label="Education" completed=true>
+      <p> Education Details</p>
+          
+               
+      <div class="form-group">
+        <mat-form-field>
+            <mat-label>Graduation</mat-label>
+            <mat-select  required name="graduation" #ref5="ngModel" ngModel>
+                <mat-option value="btech">B.tech</mat-option>
+                <mat-option value="mtech">M.tech</mat-option>
+                <mat-option value="degree">Degree</mat-option>
+            </mat-select> 
+        </mat-form-field>
+        <div *ngIf="ref5.touched && ref5.invalid" class="alert alert-danger w-50" >This Field Is Required</div>
+       </div>
+              
+               <div class="form-group">
+                <mat-form-field>
+                    <mat-label>percentage</mat-label>
+                    <input matInput type="text" required name="percentage" #ref6="ngModel" ngModel> 
+                </mat-form-field>
+        <div *ngIf="ref6.touched && ref6.invalid" class="alert alert-danger w-50" >This Field Is Required</div>
+               </div>
+               <div class="form-group">
+                <mat-form-field>
+                    <mat-label>stream</mat-label>
+                    <mat-select  required name="stream" #ref7="ngModel" ngModel>
+                        <mat-option value="CSE">CSE</mat-option>
+                        <mat-option value="ECE">ECE</mat-option>
+                        <mat-option value="MECH">MECHANICAL</mat-option>
+                    </mat-select>
+                </mat-form-field>
+        <div *ngIf="ref7.touched && ref7.invalid" class="alert alert-danger w-50" >This Field Is Required</div>
+               </div>
+               <div class="form-group">
+                <mat-form-field>
+                    <mat-label>YearOfPassing</mat-label>
+                    <input matInput type="text" required name="yop" #ref8="ngModel" ngModel> 
+                </mat-form-field>
+        <div *ngIf="ref8.touched && ref8.invalid" class="alert alert-danger w-50" >This Field Is Required</div>
+               </div>
+                
+      <div class="text-right ">
+        <button mat-raised-button color="primary" matStepperPrevious type="button"  class="mr-3"> Back</button>
+        <button mat-raised-button color="primary" matStepperNext type="button"  > Next</button>  
+      </div>
+    </mat-step>
+     <mat-step label="Experience" completed=true>
+       <p>Experience(Optional)</p>
+       <!-- <input type="file" name="uploadfile" (change)="fileUpload($event)" ngModel>
+       <button  mat-raised-button color="primary" type="button" >Upload Resume</button>
+              <div class="form-group">
+                <label for="">Skills</label>
+                <input type="text" class="form-control" name="skills" ngModel>
+              </div>
+        
+                <div class="form-check">
+                    <label for=""class="form-check-label">Experience</label>
+                    <input type="checkbox" name="experience" ngModel> 
+                </div> -->
+                <div class="form-group">
+                    <label for="">Describe your Experience</label>
+                     <textarea name="description" id="" cols="30" rows="10" class="form-control" ngModel></textarea>   
+               </div>
+       <div class="text-left">
+        
+        <button mat-raised-button color="primary" matStepperPrevious type="button" class="text-left"> Back</button>
+
+  
+      </div >
+      <button mat-raised-button color="primary"class="float-right" type="submit" >Submit</button>
+     </mat-step>
+
+  </mat-vertical-stepper> 
+    </form> 
+</div>
+
+
+        <!-- Education -->
+    
+    
+         <!-- school -->
+         <!-- <div class="row">
+                    <div class="form-group">
+                        <label for="">School Name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">percentage</label>
+                        <input type="text" class="form-control">
+                    </div>
+                 </div>
+     -->
+         <!-- Intermediate -->
+          <!-- <div class="row">
+                    <div class="form-group">
+                        <label for="">Intermediate/Diploma</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="">percentage</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+     -->
+                 <!-- Degree -->
+<!--     
+         <div class="row" id="degree">      
+             <div class="form-group">
+                <label for="">B.tech</label>
+                <input type="text" class="form-control">
+            </div>
+            
+            <div class="form-group">
+                <label for="">percentage</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">stream</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">passedout</label>
+                <input type="text" class="form-control">
+            </div>
+                 </div>
+    
+    
+          
+           <div class="form-group">
+            <label for="">Skills</label>
+            <input type="text" class="form-control">
+          </div>
+    
+            <div class="form-check">
+                <label for=""class="form-check-label">Experience</label>
+                <input type="checkbox" class="form-control" class="form--input"> 
+            </div>
+            <div class="form-group">
+                <label for="">Describe your Experience</label>
+                 <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>   
+           </div>
+    
+    
+          
+         
+          </div>
+    
+    </div>
+   
+      
+    </form> 
+</div> --> 

@@ -1,0 +1,72 @@
+<p>applications works!</p>
+
+<div class="container-fluid sticky ">
+    <h4 class="text-center">Applications</h4>
+
+<div class="container-fluid mt-2 p-2"  *ngFor="let v of jobName;let i=index" >
+  <!-- <div class="row bg-light"> -->
+      <h3  class="row bg-light"> <a href="javascript:void(0);"  (click)="sendTitle(v)" class="text-dark">{{v}}
+          <span [matBadge]="array[i]" matBadgeColor="warn" matBadgeOverlap="false"><i class="fa fa-envelope text-primary" aria-hidden="true"></i></span>
+        </a></h3>
+    <!-- </div>
+     -->
+</div>
+
+<div  *ngIf="!content" >
+<div class="container-fluid p-2" *ngIf="!nodata" style="margin-top:50px;">
+ <h3 class=" text-center " style="color: grey;">Select any one on above to see Particular Applications</h3>
+</div>
+</div>
+
+<div class="container-fluid p-2" *ngIf=nodata style="margin-top:50px;">
+    <img src="/assets/NoDataFound.png" alt="" class="mx-auto d-block " height="" width="100%">
+ <h3 class=" text-center " style="color: grey;">There are No Applications to Visit.</h3>
+</div>
+
+<div class="container-fluid p-2" *ngIf="content" style="margin-top:50px;">
+    <div class="container mt-3"  *ngFor="let x of selectedData">
+        <div class="card-deck" >
+            
+            <div class="card  container shadow" style="width: 18rem;"  >
+                <div class="card-header  p-2 pt-3  text-white" style="background-color:#3f51b5;"><h3>{{x.jobTitle}}</h3></div>
+                    <div class="card-body ">
+                        <div class="row">
+                                <div class="col-md-4">
+                                    <h4>Personal Information</h4>
+                                    <div><h5>Name :- {{x.name}}</h5></div>
+                                    <div><h5>PhoneNumber :- {{x.phonenumber}}</h5></div>
+                                    <div><h5>Email :- {{x.email}}</h5></div>
+                                    <div><h5>Adress :- {{x.adress}}</h5></div>
+                                    
+                                </div>
+                                <div class="col-md-4 border-left">
+                                    <h3>Educational</h3>
+                                    <div><h5>Graduation :- {{x.graduation}}</h5></div>
+                                    <div><h5>percentage :- {{x.percentage}}</h5></div>
+                                    <div><h5>stream :- {{x.stream}}</h5></div>
+                                    <div><h5>year of passed :- {{x.yop}}</h5></div>
+                                 
+                                </div>
+                                <div class="col-md-4  border-left">
+                                    <h3>skills</h3>
+                                    <div><h5>skills :- {{x.skills}}</h5></div>
+                                
+                                </div>
+                        </div>
+                       
+                    </div>
+                 
+                <div  class="card-footer">
+                    <!-- <button mat-raised-button color="primary" type="submit">SIGN IN</button> -->
+                    <button mat-raised-button color="primary" class=" ml-5 float-left" (click)="accept(x.email)" >Accept</button>
+                    <button  mat-raised-button color="primary" class=" float-right" (click)="reject(x.email)">Reject</button>
+                </div>
+            </div>    
+         
+        </div>
+    </div>  
+</div>   
+</div>   
+   
+
+

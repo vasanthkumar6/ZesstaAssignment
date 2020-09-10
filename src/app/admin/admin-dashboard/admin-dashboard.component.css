@@ -1,0 +1,67 @@
+h1 {
+  display: inline;
+  padding: 10px;
+  margin: 10px;
+  font-family: 'Lato', sans-serif;
+}
+
+h2, span {
+  font-family: 'Lato', sans-serif;
+}
+
+p {
+    font-size: 17px;
+    text-align: justify;
+    line-height: 1.7em;
+    font-family: 'Lato', sans-serif;
+}
+
+.nodata, .row {
+    border-radius: 7px;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: inherit;
+    
+}
+
+mat-sidenav-container
+{
+  height: 100%;
+}
+mat-sidenav,mat-sidenav-content{  
+  padding: 16px;
+}
+mat-sidenav{
+  /* background-color: royalblue; */
+  background-color:white;
+  width:200px
+}
+
+.colour{
+  background-color: royalblue;
+}
+
+.navbar{
+  justify-content: center;
+}
+span{
+  padding-right:1rem ;
+}
+
+.text-dark{
+  /* font-weight: bolder; */
+  font-size: 1rem ;
+  /* text-shadow:; */
+
+}
+.hamburg{
+   font-size: 1.5rem;
+   color: dimgray;
+   /* font-weight: 600px; */
+}

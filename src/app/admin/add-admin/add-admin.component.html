@@ -1,0 +1,52 @@
+<!-- <p>add-admin works!</p> -->
+
+<form #ref="ngForm"  (ngSubmit)="addAdmin(ref.value)">
+    <mat-card class="shadow col-md-8 mx-auto"> 
+        <h1 class="text-center">Add Admin</h1>
+     <div class="form-group">
+       <mat-form-field appearance='outline'>
+           <mat-label>Name</mat-label>
+           <input matInput type="text"  name="name" #ref1="ngModel" required  minlength=4 ngModel> 
+       </mat-form-field>
+       <div *ngIf="ref1.invalid && (ref1.dirty||ref1.touched)" class="alert alert-danger">
+        <div *ngIf="ref1.errors?.required" >Name is required</div>
+        <div *ngIf="ref1.errors?.minlength">Name should be atleast 4 characters</div>
+       </div>
+    </div>
+    <div class="form-group">
+        <mat-form-field appearance='outline'>
+            <mat-label>Email</mat-label>
+            <input matInput type="text"  name="email" #email=ngModel required ngModel>  
+        </mat-form-field>
+        <div *ngIf="email.touched && email.invalid"  class="alert alert-danger">email is a required Field</div>
+     </div> 
+    <div class="form-group">
+       <mat-form-field appearance='outline'>
+           <mat-label>PhoneNumber</mat-label>
+           <input matInput type="text" name="phonenumber" ngModel required #phone="ngModel"> 
+       </mat-form-field>
+        <div *ngIf="phone.touched && phone.invalid"  class="alert alert-danger">Phone Number is a required Field</div>
+    </div> 
+    <div class="form-group">
+       <mat-form-field appearance='outline'>
+           <mat-label>UserName</mat-label>
+           <input matInput type="text"  name="username" #username="ngModel" required minlength=4  ngModel> 
+       </mat-form-field>
+       <div *ngIf='username.touched&& username.invalid'  class="alert alert-danger">
+           <div *ngIf="username.errors?.required">UserName is Required</div>
+           <div *ngIf="username.errors?.minlength">UserName should be atleast 4 characters</div>
+       </div>
+    </div> 
+    <div class="form-group">
+       <mat-form-field appearance='outline'>
+           <mat-label>Password</mat-label>
+           <input matInput type="text"  name="password" #passw="ngModel" required ngModel> 
+       </mat-form-field>
+       <div *ngIf="passw.touched && passw.invalid" class="alert alert-danger">Password Number is a required Field</div>
+    </div>  
+    <div class="text-center mb-3 mt-3">
+        <button mat-raised-button color="primary" type="submit" [disabled]="ref.invalid">Submit</button>
+    </div>
+</mat-card>
+</form>
+

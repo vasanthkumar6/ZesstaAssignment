@@ -1,0 +1,10 @@
+form {
+    margin-top: 40px;
+ }
+ 
+ mat-form-field {
+     width: 100%;
+     padding: 6px;
+ }
+
+

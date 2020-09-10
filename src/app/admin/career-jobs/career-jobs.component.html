@@ -1,0 +1,206 @@
+<!-- <div>
+    <img src="/assets/carrers.jpg" alt="" height="" width="100%">
+</div> -->
+<!-- 
+<p style="margin-top: 60px;">jobs works!</p> -->
+<h4 class="text-center text-dark">Careers</h4>
+<div class=" form-group">
+  
+    <!-- <mat-label>USERNAME</mat-label> -->
+    <input  type="text" [(ngModel)]=searchterm #s (click)="search(s.value)" placeholder="search"> 
+    <a class=" ml-3"><i class="fa fa-search" aria-hidden="true"></i></a>
+
+  <!-- <input matInput type="text" [(ngModel)]=searchterm #s (click)="search(s.value)" >
+   <button class="btn btn-outline-primary ml-3"><i class="fa fa-search" aria-hidden="true"></i></button> -->
+</div>
+<div class="container-fluid" style="margin-top: 60px;">
+  <!-- <div *ngIf="nothingFound">
+    <p><strong>nothing Found</strong></p>
+  </div> -->
+<div class="card-sm  col-sm-7 mx-auto mt-3 shadow rounded" *ngFor="let v of jobs|careerJobSearch:searchterm">
+    <div class="card-header text-white" style="background-color:#3f51b5;" >
+   <strong>{{v.jobtitle}} </strong> 
+   <!-- <strong class="text-right">{{v.jobId}} </strong>  -->
+    <p> InstaSmart Solutions pvtd. </p>
+    </div>
+    <div class="card-body">
+        <div class="row " >
+            <div class="col-md-6">   
+              <div class="p-1 c"><i class="fa fa-file-text mr-1" aria-hidden="true"> </i>JobTitle : {{v.jobtitle}}</div>
+              <div class="p-1 c"><i class="fa fa-file-text mr-1" aria-hidden="true"> </i>Qualification : {{v.qualification}}</div>
+              <div class="p-1 c"><i class="fa fa-money mr-1" aria-hidden="true"></i> 
+                Salary : {{v.maxsalary|currency:'INR':'symbol'}}-{{v.minsalary|currency:'INR':'symbol'}}</div>
+            </div>
+            <div class="col-md-6">   
+                <div class="p-1 c" ><i class="fa fa-black-tie mr-1" aria-hidden="true" ></i>InterviewType: {{v.interviewType}}</div>
+                <div class="p-1 c"><i class="fa fa-suitcase mr-1" aria-hidden="true"> </i>JobType : {{v.jobtype}}</div>
+                <div class="p-1 c"><i class="fa fa-map-marker mr-1" aria-hidden="true"> </i>JobLocation : {{v.joblocation}}</div>
+            </div>
+             <div class="p-1 c">JobDescription : {{v.description}}</div>
+        </div>
+
+    </div>
+  
+    <!-- <div class="card-footer"> -->
+        <div class="text-right mb-3 p-3">
+            <!-- <button class="btn btn-success" data-toggle="modal" data-target="#myModal">Apply</button> -->
+            <hr>
+            <button mat-raised-button class="float-left "  color="primary" data-toggle="modal" data-target="#x" (click)="editJob(v)">Edit</button>
+         
+            <button mat-raised-button  color="primary"  (click)="deleteJob(v.jobId)">Delete</button>
+        </div>
+        
+    <!-- </div> -->
+</div >
+<u></u>
+
+
+
+
+
+
+
+<!-- Trigger the modal with a button -->
+
+<!-- Modal -->
+<!-- <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+        
+      
+            
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer ">
+
+        </div>
+      </div>
+    </div> -->
+
+
+
+
+ 
+      <!-- <form [formGroup]="formGroup">
+        <mat-horizontal-stepper formArrayName="formArray" linear>
+          <mat-step formGroupName="0" [stepControl]="formArray.get([0])">
+            ...
+            <div>
+              <button mat-button matStepperNext type="button">Next</button>
+            </div>
+          </mat-step>
+          <mat-step formGroupName="1" [stepControl]="formArray.get([1])">
+            ...
+            <div>
+              <button mat-button matStepperPrevious type="button">Back</button>
+              <button mat-button matStepperNext type="button">Next</button>
+            </div>
+          </mat-step>
+          ...
+        </mat-horizontal-stepper>
+      </form> -->
+
+      <!-- Modal -->
+    <div id="x" data-backdrop="false" class="modal fade" role="dialog">
+        <div class="modal-dialog"> 
+    
+            <!-- Modal content-->
+                <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h4 class="">EditJOb</h4> -->
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                            <form #ref="ngForm"              (ngSubmit)="update(ref.value)">
+                                <h3 class="text-center text-white">Edit Job</h3>
+                                <div class="row">
+                                  <div class="col-lg-6">
+                                     <div class="form-group">
+                                         <label for="">Job Title</label>
+                                         <input type="text" name="jobtitle"  class="form-control" [ngModel]="obj.jobtitle">
+                                     </div>
+                                     <div class="form-group">
+                                         <label for="">Qualification</label>
+                                         <input type="text" name="qualification" class="form-control" [ngModel]="obj.qualification">
+                                     </div>
+                                      <div class="row">
+                                          <div class="col-6">
+                                     <div class="form-group">
+                                         <label for="">Min salary </label>
+                                         <input type="number" name="maxsalary" class="form-control" [ngModel]="obj.maxsalary"> 
+                                     </div>
+                                     
+                                          </div>
+                                          
+                                          <div class="col-6">
+                                     <div class="form-group">
+                                         <label for="">Min salary</label>
+                                         <input type="number" name="minsalary" class="form-control" [ngModel]="obj.minsalary">
+                                     </div>
+                                          </div>
+                                      </div>
+                                   </div>
+                                   <div class="col-lg-6">
+                                       <div class="form-group">
+                                           <label for="">Job type</label>
+                                           <input type="text" name="jobtype" class="form-control" [ngModel]="obj.jobtype">
+                                       </div>
+                                       <div class="form-group">
+                                           <label for="">Job Location</label>
+                                           <input type="text" name="joblocation" class="form-control" [ngModel]="obj.joblocation">
+                                       </div>
+                                       <div class="ml-5">
+                                           <div>
+                                            <label for="" class="text-left">Hiring process</label>
+                                           </div>
+                                 
+                                           <input type="radio" value="facetoface" class="form-check-input" name="interviewType" [ngModel]="obj.facetoface">
+                                           <label for="" class="mr-5 form-check-label">Face to Face</label>
+                                       
+                                           <input type="radio" value="telephone" class="form-check-input" name="interviewType" [ngModel]="obj.telephone">
+                                           <label for="" class="mr-5 form-check-label">Telephone</label>
+                    
+                                           <br>
+                    
+                                           <input type="radio" value="writtentest"  class="form-check-input" name="interviewType" [ngModel]="obj.writtentest">
+                                           <label for="" class="mr-5 form-check-label">Written Test</label>
+                                       
+                                    
+                                           <input type="radio" value="walkin"  class="form-check-input" name="interviewType"  [ngModel]="obj.walkin">
+                                           <label for="" class="mr-5 form-check-label">Walk-in</label>
+                                       
+                                       </div>
+                                      
+                                   </div>
+                    
+                                </div>
+                                <div class="form-group">
+                                    <label for="" >Job Description</label>
+                                    <textarea name="description" id="" cols="35" rows="6" class="form-control" [ngModel]="obj.description"></textarea>
+                                    <!-- <editor ngModel name="description"></editor> -->
+                                </div>
+                             <!-- <div class="text-center mb-3">
+                                 <button class="btn-md btn-outline-success mt-3" type="submit">Post</button>
+                             </div> -->
+                             <div class="text-center mb-3 mt-3">
+                                <button mat-raised-button color="primary" type="submit" >Update</button>
+                            </div>
+                            </form>
+                    
+    
+                </div>
+                <div class="modal-footer">
+    
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,173 @@
+
+
+<!-- <button class="btn btn-success" (click)="getdata()">get data</button> -->
+<!-- <button class="btn btn-info ml-5" data-target="#x" data-toggle="modal" >add</button>
+
+
+
+<table class="table boarderd">
+    <thead>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Id</th>
+        <th>Avatar</th>
+    </thead>
+    <tr *ngFor="let v of data;let i=index;">
+
+        <td>{{v.first_name}}</td>
+        <td>{{v.last_name}}</td>
+        <td>{{v.email}}</td>
+        <td>{{v.id}}</td>
+        <!-- <td>{{v.avatar}}</td> -->
+        <!-- <img [src]="v.avatar" alt=""> -->
+        <!-- <button class="btn btn-danger" (click)="delete(v.id)">Delete</button>
+        <button class="btn btn-info" data-target="#y" data-toggle="modal"   (click)="edit(v)">update</button>
+    </tr>
+</table>
+
+<div >
+<div class="modal"id="y" >
+    <div class="modal-dialog" >
+        <div class="modal-content">
+            <div class="modal-header"><button class="btn btn-danger data-dismiss="modal">X</button></div>
+            <div class="modal-body">
+                <form #reff="ngForm"  (ngSubmit)="Savechanges(reff.value)">
+                <div>
+                <label class="form-group" for="">First Name</label>
+             <input type="text" name="firstname"  [ngModel]="obj.first_name" class="form-control">
+            </div>
+
+             <div>
+                <label class="form-group" for="">Last Name</label>
+             <input type="text" name="lastname" [ngModel]="obj.last_name" class="form-control">
+            </div>
+
+             <div>
+                <label class="form-group" for="">Email</label>
+             <input type="text" name="email" [ngModel]="obj.email" class="form-control">
+            </div>
+
+             <div>
+                <label class="form-group" for="">Id</label>
+                <input type="text"  name="id" [disabled]="true" [ngModel]="obj.id" class="form-control">
+            
+            </div>
+
+            <button type="submit" class="btn btn-success">Submit</button>
+           
+    
+        </form>
+        </div>
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+
+
+<div class="modal" id="x">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header"><button class="btn btn-danger " data-dismiss="modal">X</button></div>
+            <div class="modal-body">
+                <form #ref1="ngForm"  (ngSubmit)="add(ref1.value)">
+                    <div>
+                    <label class="form-group" for="">First Name</label>
+                 <input type="text" name="first_name"  class="form-control" ngModel>
+                </div>
+    
+                 <div>
+                    <label class="form-group" for="">Last Name</label>
+                 <input type="text" name="last_name" class="form-control" ngModel>
+                </div>
+    
+                 <div>
+                    <label class="form-group" for="">Email</label>
+                 <input type="text" name="email"  class="form-control" ngModel>
+                </div>
+    
+                 <div>
+                    <label class="form-group" for="">Id</label>
+                    <input type="text"  name="id"   class="form-control" ngModel>
+                
+                </div>
+    
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+    
+            </div>
+
+        </div>
+
+    </div>
+
+</div> --> 
+
+<!-- <div class="container-fluid" >
+    <div class="row bg-light p-2 sticky jumbotron" >
+       <div class="container">
+             <div class="col-md-12 col-sm-12">
+                 <h1>Dashboard</h1>
+                 <button mat-button class="float-right" type="button" data-toggle="dropdown" aria-haspopup="true"
+                 aria-expanded="false">admin<i class="fa fa-angle-down ml-1" aria-hidden="true"></i>
+                 </button>
+                 <div class="dropdown-menu dropdown-menu-right">
+                    <button  class="dropdown-item" type="button"  routerLink="postjob">postjob</button>
+                    <button  class="dropdown-item" type="button" routerLink="applications">Applications</button>
+                    <button  class="dropdown-item" type="button" routerLink="shortlist">Shortlisted</button>
+                    <button  class="dropdown-item" type="button" routerLink="addAdmin">AddAdmin</button>
+                    <button  class="dropdown-item" type="button">
+                        <i class="fa fa-user-circle mr-1" aria-hidden="true"></i>My profile
+                    </button>
+                    <button mat-button class="dropdown-item" type="button" (click)="logout()">
+                        <i class="fa fa-sign-out mr-1" aria-hidden="true"></i>Logout
+                    </button>
+                </div>
+            </div>
+       </div>
+    </div> -->
+
+<!-- 
+<div>
+    <select name="" id="" class="float-right">
+        <option value="" routerLink="postjob" class="form-control">Job posting</option>
+    </select>
+</div> -->
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="over" [(opened)]="opened" class="navbar">SideNav
+        <mat-nav-list>
+                <a  mat-list-item (click)="opened=!opened" class="text-dark  "  routerLink="postjob"><i class="fa fa-pencil-square p-1" aria-hidden="true"></i>PostJob</a>
+                <mat-divider></mat-divider>
+                <a  mat-list-item (click)="opened=!opened" class="text-dark  "routerLink="applications"><i class="fa fa-envelope p-1" aria-hidden="true"></i>Applications</a>
+                <mat-divider></mat-divider>
+                <a  mat-list-item (click)="opened=!opened" class="text-dark  "routerLink="shortlist"><i class="fa fa-envelope-open p-1" aria-hidden="true"></i>ShortList</a>
+                <mat-divider></mat-divider>
+                <a  mat-list-item (click)="opened=!opened" class="text-dark "routerLink="addAdmin"><i class="fa fa-user-plus p-1" aria-hidden="true"></i>AddAdmin</a>
+                <mat-divider></mat-divider>
+                <a  mat-list-item (click)="opened=!opened" class="text-dark "routerLink="careerJobs"><i class="fa fa-user-plus p-1" aria-hidden="true"></i>CareerJobs</a>
+                <mat-divider></mat-divider>
+
+        </mat-nav-list>
+    </mat-sidenav>
+    
+    <mat-sidenav-content>
+        <a (click)="opened=!opened"><i class="fa fa-bars pb-5 pl-2 hamburg"  aria-hidden="true"></i></a>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+
+   
+       
+    
+         
+     
+
+  
+   
+

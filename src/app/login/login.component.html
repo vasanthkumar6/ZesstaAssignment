@@ -1,0 +1,95 @@
+<!-- <p>login works!</p>
+<div class="card col-sm-4  mx-auto rounded" style="">
+    <div class="row" > -->
+    <!-- <div class="col-sm-6 pic">
+       <img src="/assets/LoginAbstractEdied.jpg" height="400px" width="380px"alt="" class="border-right">
+    </div>  -->
+<!-- <div class="col-sm-1"> -->
+
+<!-- </div> -->
+   <!-- <div class="col-sm-6 login " >
+       <form #ref="ngForm"            (ngSubmit)="login(ref.value)" style="margin-top: 80px;" >
+
+     
+       <div class="form-group">
+           <mat-form-field appearance="outline">
+              <mat-label>Username</mat-label>
+              <input matInput type="text" name="username" class="w-25%"  ngModel >
+           </mat-form-field> -->
+               <!-- <label for="">UserName</label> -->
+               
+       <!-- </div> 
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>password</mat-label>
+                <input  matInput type="password" name="password"  ngModel>
+             </mat-form-field>
+        </div> -->
+        <!-- <div class="form-group text-center ">
+            <button class="btn btn-primary mt-3">Login</button>
+        </div> -->
+        <!-- <div class="text-center">
+            <button mat-raised-button color="primary" type="submit">SIGN IN</button>
+        </div>
+
+       </form>
+    </div>
+</div>
+</div> -->
+
+
+
+<div class="container">
+    <div class="row">
+      
+        <div class="col-md-3"></div>
+        <div class="col-md-6" style="margin-top:100px;">
+            
+            <mat-card class="shadow">
+                <!-- <div class="display-5 text-center">Login Form</div><hr> -->
+                <!-- <h4 class="text-center">Login Form</h4> -->
+                <mat-card-title class="text-center font-weight-light">Login</mat-card-title>
+                <div class="alert alert-danger alert-dismissible fade show" *ngIf="errmsg">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close" (click)="refresh()">&times;</a>{{errmsg}}
+                </div>
+                <!-- <mat-card-title class="text-center font-weight-light">Login</mat-card-title> -->
+                <!-- <div class="alert alert-danger alert-dismissible" *ngIf="errMsg">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> {{errMsg}}
+                </div> -->
+                <form #ref="ngForm" (ngSubmit)="login(ref.value)">
+                    <div>
+                        <mat-form-field appearance='outline'>
+                            <mat-label>USERNAME</mat-label>
+                            <input matInput type="text" required name="username" ngModel> 
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field appearance='outline'>
+                            <mat-label>PASSWORD</mat-label>
+                            <input matInput type="password" required name="password" ngModel>
+                            <mat-hint>password mut be atleast 8 characters</mat-hint>
+                        </mat-form-field>
+                    </div>
+                    <!-- <div>
+                        <mat-form-field appearance='outline'>
+                            <mat-label>USERTYPE</mat-label>
+                            <mat-select name="userType" ngModel>
+                                <mat-option value="user">user</mat-option>
+                                <mat-option value="developer">developer/programmer</mat-option>
+                                <mat-option value="guest">guest</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div> -->
+                    <div class="text-center mb-3 mt-3">
+                        <button mat-raised-button color="primary" type="submit">SIGN IN</button>
+                    </div>
+                    <!-- <div class="text-center mt-4">
+                        <h4>New around here? <a href="/register">click to Sign up</a></h4>
+                    </div> -->
+                </form>
+            </mat-card>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+</div>
