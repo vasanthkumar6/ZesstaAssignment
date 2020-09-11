@@ -51,12 +51,7 @@ export class LoginComponent implements OnInit {
 
   }
 
-  // refresh()
-  // {
-  //   this.ngOnInit();
-  //   console.log("refresh")
-   
-  // }
+
 
 
 }
