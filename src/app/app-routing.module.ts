@@ -7,8 +7,9 @@ import { AuthGaurdGuard } from './auth-gaurd.guard';
 import { careersComponent } from './jobs/careers.component';
 
 
+
 const routes: Routes = [{path:"",redirectTo:"home",pathMatch:"full"},{path:"home",component:HomeComponent},
-{path:"login",component:LoginComponent},{path:"jobs",component:careersComponent},
+{path:"login",component:LoginComponent},{path:"careers",component:careersComponent},
 {path:"applyjobs/:x",component:ApplyjobComponent}]
 
 @NgModule({
