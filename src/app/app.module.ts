@@ -9,7 +9,6 @@ import { LoginComponent } from './login/login.component';
 import { AdminModule } from './admin/admin.module';
 import { RegisterComponent } from './register/register.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { JobsComponent } from './jobs/jobs.component';
 import { BrowserAnimationsModule, } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 // import { NgxLoadingModule } from 'ngx-loading';
@@ -19,6 +18,8 @@ import { ApplicationsComponent } from './applications/applications.component';
 import { JobsearchPipe } from './jobsearch.pipe';
 import { AuthorizationService } from './authorization.service';
 import { HelperGuard } from './helper.guard';
+import { CareerJObsComponent } from './admin/career-jobs/career-jobs.component';
+import { careersComponent } from './jobs/careers.component';
 // import { CareerJobSearchPipe } from './career-job-search.pipe';
 // import { ShortlistedComponent } from './shortlisted/shortlisted.component';
 // import { AddAdminComponent } from './add-admin/add-admin.component';
@@ -32,7 +33,7 @@ import { HelperGuard } from './helper.guard';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    JobsComponent,
+  careersComponent,
     ApplyjobComponent,
     ApplicationsComponent,
     JobsearchPipe,

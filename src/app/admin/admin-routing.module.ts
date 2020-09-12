@@ -2,7 +2,6 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { PostjobComponent } from './postjob/postjob.component';
-import { JobsComponent } from '../jobs/jobs.component';
 import { ApplicationsComponent } from '../applications/applications.component';
 import { AddAdminComponent } from './add-admin/add-admin.component';
 import { HelperGuard } from '../helper.guard';

@@ -7,25 +7,37 @@
               <div class="col-lg-6">
                  <div class="form-group">
                      <label for="">Job Title</label>
-                     <input type="text" name="jobtitle"  class="form-control" ngModel>
+                     <input type="text" name="jobtitle"  class="form-control" required  #ref1="ngModel" ngModel>
+                 <!-- <div *ngIf="ref3.touched && ref3.invalid"  class="alert alert-danger w-50">This Field Is Required</div> -->
+                <div *ngIf="ref1.touched && ref1.invalid" class="alert text-danger" >*This Field Is Required</div>
+
+
                  </div>
+
+                 <!-- <div *ngIf="ref1.touched && ref1.invalid" class="alert alert-danger">Required field</div> -->
+
                  <div class="form-group">
                      <label for="">Qualification</label>
-                     <input type="text" name="qualification" class="form-control" ngModel>
+                     <input type="text" name="qualification" class="form-control" required #ref2="ngModel" ngModel>
+                     <div *ngIf="ref2.touched && ref2.invalid" class="alert text-danger">*This Field Is Required</div>
                  </div>
                   <div class="row">
                       <div class="col-6">
                  <div class="form-group">
                      <label for="">Min salary </label>
-                     <input type="number" name="maxsalary" class="form-control" ngModel> 
+                     <input type="number" name="maxsalary" class="form-control" required #ref3="ngModel"  ngModel> 
+                     <div *ngIf="ref3.touched && ref3.invalid" class="alert text-danger">*This Field Is Required</div>
                  </div>
+
                  
                       </div>
                       
                       <div class="col-6">
                  <div class="form-group">
-                     <label for="">Min salary</label>
-                     <input type="number" name="minsalary" class="form-control" ngModel>
+                     <label for="">Max salary</label>
+                     <input type="number" name="minsalary" class="form-control" required #ref4="ngModel" ngModel>
+                     <div *ngIf="ref4.touched && ref4.invalid" class="alert text-danger">*This Field Is Required</div>
+
                  </div>
                       </div>
                   </div>
@@ -33,31 +45,40 @@
                <div class="col-lg-6">
                    <div class="form-group">
                        <label for="">Job type</label>
-                       <input type="text" name="jobtype" class="form-control" ngModel>
+                       <input type="text" name="jobtype" class="form-control" required #ref5="ngModel" ngModel>
+                       <!-- <div *ngIf="ref5.invalid && ref5.touched" class="alert text-danger">*This Field Is Required</div> -->
                    </div>
                    <div class="form-group">
                        <label for="">Job Location</label>
-                       <input type="text" name="joblocation" class="form-control" ngModel>
+                       <input type="text" name="joblocation" class="form-control" required #ref6="ngModel" ngModel>
+                       <div *ngIf="ref6.invalid && ref6.touched" class="alert text-danger">*This Field Is Required</div>
+
                    </div>
                    <div class="ml-5">
                        <div>
-                        <label for="" class="text-left">Hiring process</label>
+                        <label for="" class="text-left" >Hiring process</label>
                        </div>
-             
-                       <input type="radio" value="facetoface" class="form-check-input" name="interviewType" ngModel>
+
+                       <input type="radio" value="facetoface" class="form-check-input"  name="interviewType" required #ref7="ngModel" ngModel>
                        <label for="" class="mr-5 form-check-label">Face to Face</label>
+                       <!-- <div *ngIf="ref7.invalid" class="alert text-danger">*This Field Is Required</div> -->
                    
-                       <input type="radio" value="telephone" class="form-check-input" name="interviewType" ngModel>
+                       <input type="radio" value="telephone" class="form-check-input" name="interviewType" required  #ref8="ngModel" ngModel>
                        <label for="" class="mr-5 form-check-label">Telephone</label>
+                       <!-- <div *ngIf="ref8.invalid && ref8.touched" class="alert text-danger">*This Field Is Required</div> -->
+
 
                        <br>
 
-                       <input type="radio" value="writtentest"  class="form-check-input" name="interviewType" ngModel>
+                       <input type="radio" value="writtentest"  class="form-check-input" name="interviewType" required #ref9="ngModel" ngModel>
                        <label for="" class="mr-5 form-check-label">Written Test</label>
+                       <!-- <div *ngIf="ref9.invalid && ref9.touched" class="alert text-danger">*This Field Is Required</div> -->
                    
                 
-                       <input type="radio" value="walkin"  class="form-check-input" name="interviewType"  ngModel>
+                       <input type="radio" value="walkin"  class="form-check-input" name="interviewType" required #ref10="ngModel"  ngModel>
                        <label for="" class="mr-5 form-check-label">Walk-in</label>
+                       <!-- <div *ngIf="ref10.invalid && ref10.touched" class="alert text-danger">*This Field Is Required</div> -->
+
                    
                    </div>
                   
@@ -66,14 +87,15 @@
             </div>
             <div class="form-group">
                 <label for="" >Job Description</label>
-                <textarea name="description" id="" cols="35" rows="6" class="form-control" ngModel></textarea>
-                <!-- <editor ngModel name="description"></editor> -->
+                <textarea name="description" id="" cols="35" rows="6" class="form-control" required #ref11='ngModel' ngModel></textarea>
+                <div *ngIf="ref11.invalid && ref11.touched" class="alert text-danger">*This Field isRequired</div>
+                <!-- <editor ngModel name="description"></editor> --> 
             </div>
          <!-- <div class="text-center mb-3">
              <button class="btn-md btn-outline-success mt-3" type="submit">Post</button>
          </div> -->
          <div class="text-center mb-3 mt-3">
-            <button mat-raised-button color="primary" type="submit">Post</button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="ref.invalid">Post</button>
         </div>
         </form>
     </div>
